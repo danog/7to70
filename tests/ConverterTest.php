@@ -1,10 +1,10 @@
 <?php
 
-namespace Spatie\Php7to5\Test;
+namespace danog\Php7to70\Test;
 
-use Spatie\Php7to5\Converter;
+use danog\Php7to70\Converter;
 use PHPUnit\Framework\TestCase;
-use Spatie\Php7to5\Exceptions\InvalidParameter;
+use danog\Php7to70\Exceptions\InvalidParameter;
 
 class ConverterTest extends TestCase
 {

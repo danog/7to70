@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Php7to5\NodeVisitors;
+namespace danog\Php7to70\NodeVisitors;
 
 use PhpParser\Node;
 use PhpParser\Node\Stmt\ClassConst;

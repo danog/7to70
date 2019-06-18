@@ -1,8 +1,8 @@
 <?php
 
-namespace Spatie\Php7to5;
+namespace danog\Php7to70;
 
-use Spatie\Php7to5\Exceptions\InvalidParameter;
+use danog\Php7to70\Exceptions\InvalidParameter;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Finder\Finder;
 
@@ -27,7 +27,7 @@ class DirectoryConverter
      * @param string[] $extensions
      * @param string[]|null $excludes
      *
-     * @throws \Spatie\Php7to5\Exceptions\InvalidParameter
+     * @throws \danog\Php7to70\Exceptions\InvalidParameter
      */
     public function __construct($sourceDirectory, array $extensions, array $excludes = null)
     {
@@ -88,7 +88,7 @@ class DirectoryConverter
     /**
      * @param string $destinationDirectory
      *
-     * @throws \Spatie\Php7to5\Exceptions\InvalidParameter
+     * @throws \danog\Php7to70\Exceptions\InvalidParameter
      */
     public function savePhp5FilesTo($destinationDirectory)
     {

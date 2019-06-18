@@ -1,11 +1,11 @@
 <?php
 
-namespace Spatie\Php7to5;
+namespace danog\Php7to70;
 
 use PhpParser\NodeTraverser;
 use PhpParser\ParserFactory;
-use Spatie\Php7to5\Exceptions\InvalidParameter;
-use Spatie\Php7to5\NodeVisitors\YieldReturnDetector;
+use danog\Php7to70\Exceptions\InvalidParameter;
+use danog\Php7to70\NodeVisitors\YieldReturnDetector;
 
 class Converter
 {
@@ -15,7 +15,7 @@ class Converter
     /**
      * @param string $pathToPhp7Code
      *
-     * @throws \Spatie\Php7to5\Exceptions\InvalidParameter
+     * @throws \danog\Php7to70\Exceptions\InvalidParameter
      */
     public function __construct($pathToPhp7Code)
     {
@@ -47,10 +47,6 @@ class Converter
 
         $php7Statements = $parser->parse($php7code);
 
-        $traverser = $this->getSimpleTraverser();
-
-        $traverser->traverse($php7Statements);
-        
         $traverser = $this->getTraverser();
 
         $php5Statements = $traverser->traverse($php7Statements);
@@ -61,12 +57,6 @@ class Converter
     }
 
 
-    public static function getSimpleTraverser()
-    {
-        $traverser = new NodeTraverser();
-        $traverser->addVisitor(new YieldReturnDetector);
-        return $traverser;
-    }
     /**
      * @return \PhpParser\NodeTraverser
      */
@@ -77,7 +67,7 @@ class Converter
         foreach (glob(__DIR__.'/NodeVisitors/*.php') as $nodeVisitorFile) {
             $className = pathinfo($nodeVisitorFile, PATHINFO_FILENAME);
 
-            $fullClassName = '\\Spatie\\Php7to5\\NodeVisitors\\'.$className;
+            $fullClassName = '\\danog\\Php7to70\\NodeVisitors\\'.$className;
 
             $traverser->addVisitor(new $fullClassName());
         }

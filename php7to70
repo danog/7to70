@@ -8,6 +8,6 @@ if (file_exists(__DIR__.'/vendor/autoload.php')) {
     require __DIR__.'/../../autoload.php';
 }
 
-$application = new \Spatie\Php7to5\Console\Application();
+$application = new \danog\Php7to70\Console\Application();
 
 $application->run();

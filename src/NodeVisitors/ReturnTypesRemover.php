@@ -1,10 +1,10 @@
 <?php
 
-namespace Spatie\Php7to5\NodeVisitors;
+namespace danog\Php7to70\NodeVisitors;
 
 use PhpParser\Node;
-use PhpParser\Node\FunctionLike;
 use PhpParser\NodeVisitorAbstract;
+use PhpParser\Node\FunctionLike;
 
 class ReturnTypesRemover extends NodeVisitorAbstract
 {
@@ -16,7 +16,9 @@ class ReturnTypesRemover extends NodeVisitorAbstract
         if (!$node instanceof FunctionLike) {
             return;
         }
-
+        if (!$node->returnType instanceof Node\NullableType) {
+            return;
+        }
         $node->returnType = null;
     }
 }

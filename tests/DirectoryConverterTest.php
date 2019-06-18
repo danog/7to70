@@ -1,10 +1,10 @@
 <?php
 
-namespace Spatie\Php7to5\Test;
+namespace danog\Php7to70\Test;
 
 use PHPUnit\Framework\TestCase;
 use Illuminate\Filesystem\Filesystem;
-use Spatie\Php7to5\DirectoryConverter;
+use danog\Php7to70\DirectoryConverter;
 
 class DirectoryConverterTest extends TestCase
 {

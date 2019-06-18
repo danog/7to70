@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Php7to5\Test;
+namespace danog\Php7to70\Test;
 
 use PHPUnit\Framework\TestCase;
 use Illuminate\Filesystem\Filesystem;
@@ -161,7 +161,7 @@ class ConsoleCommandTest extends TestCase
     {
         $command = $this->getCommand($this->inputFile, $this->outputFile, null);
 
-        $this->assertThrowsException($command, '[Spatie\Php7to5\Exceptions\InvalidParameter]');
+        $this->assertThrowsException($command, '[danog\Php7to70\Exceptions\InvalidParameter]');
     }
 
     /** @test */
@@ -170,7 +170,7 @@ class ConsoleCommandTest extends TestCase
         $destinationDirectory = $this->getConsoleCommand().'/directoryExist';
         $command = $this->getCommand($this->sourceDirectory, $destinationDirectory, null);
 
-        $this->assertThrowsException($command, '[Spatie\Php7to5\Exceptions\InvalidParameter]');
+        $this->assertThrowsException($command, '[danog\Php7to70\Exceptions\InvalidParameter]');
     }
 
     /** @test */
@@ -180,7 +180,7 @@ class ConsoleCommandTest extends TestCase
         $destinationDirectory = "{$sourceDirectory}/php5";
         $command = $this->getCommand($sourceDirectory, $destinationDirectory, null);
 
-        $this->assertThrowsException($command, '[Spatie\Php7to5\Exceptions\InvalidParameter]');
+        $this->assertThrowsException($command, '[danog\Php7to70\Exceptions\InvalidParameter]');
     }
     /** @test */
     public function it_throws_an_exception_if_source_directory_does_not_exist()
@@ -188,7 +188,7 @@ class ConsoleCommandTest extends TestCase
         $sourceDirectory = $this->getStubsDirectory().'/directoryConverter/sourceDir';
         $command = $this->getCommand($sourceDirectory, $this->destinationDirectory, '--overwrite');
 
-        $this->assertThrowsException($command, '[Spatie\Php7to5\Exceptions\InvalidParameter]');
+        $this->assertThrowsException($command, '[danog\Php7to70\Exceptions\InvalidParameter]');
     }
 
     /** @test */
@@ -196,7 +196,7 @@ class ConsoleCommandTest extends TestCase
     {
         $command = $this->getCommand($this->destinationDirectory, $this->destinationDirectory);
 
-        $this->assertThrowsException($command, '[Spatie\Php7to5\Exceptions\InvalidParameter]');
+        $this->assertThrowsException($command, '[danog\Php7to70\Exceptions\InvalidParameter]');
     }
 
     /** @test */
@@ -205,7 +205,7 @@ class ConsoleCommandTest extends TestCase
         $sourceFile = $this->getStubsDirectory().'/converter/it-can-remove-scalar-type-hints/php.php';
         $command = $this->getCommand($sourceFile, $this->destinationDirectory, '--overwrite');
 
-        $this->assertThrowsException($command, '[Spatie\Php7to5\Exceptions\InvalidParameter]');
+        $this->assertThrowsException($command, '[danog\Php7to70\Exceptions\InvalidParameter]');
     }
 
     /**

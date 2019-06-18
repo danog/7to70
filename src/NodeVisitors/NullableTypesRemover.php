@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Php7to5\NodeVisitors;
+namespace danog\Php7to70\NodeVisitors;
 
 use PhpParser\Node;
 use PhpParser\Node\Param;
 use PhpParser\NodeVisitorAbstract;
 
-class ScalarTypeHintsRemover extends NodeVisitorAbstract
+class NullableTypesRemover extends NodeVisitorAbstract
 {
     /**
      * {@inheritdoc}
@@ -25,19 +25,5 @@ class ScalarTypeHintsRemover extends NodeVisitorAbstract
                 );
             }
         }
-
-        if ($this->isScalar($node->type)) {
-            $node->type = null;
-        }
-    }
-
-    /**
-     * @param string|null $type
-     *
-     * @return bool
-     */
-    protected function isScalar($type)
-    {
-        return in_array($type, ['int', 'integer', 'float', 'string', 'bool', 'boolean']);
     }
 }

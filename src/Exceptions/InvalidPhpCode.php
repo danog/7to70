@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Php7to5\Exceptions;
+namespace danog\Php7to70\Exceptions;
 
 use Exception;
 

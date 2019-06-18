@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Php7to5\NodeVisitors;
+namespace danog\Php7to70\NodeVisitors;
 
 use PhpParser\Node;
 use PhpParser\NodeTraverser;
@@ -8,8 +8,8 @@ use PhpParser\Node\Stmt\Declare_;
 use PhpParser\Node\Stmt\Namespace_;
 use PhpParser\Node\Stmt\Use_;
 use PhpParser\NodeVisitorAbstract;
-use Spatie\Php7to5\Converter;
-use Spatie\Php7to5\Exceptions\InvalidPhpCode;
+use danog\Php7to70\Converter;
+use danog\Php7to70\Exceptions\InvalidPhpCode;
 
 class MultipleCatchReplacer extends NodeVisitorAbstract
 {

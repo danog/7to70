@@ -1,22 +1,22 @@
 <?php
 
-namespace Spatie\Php7to5\Console;
+namespace danog\Php7to70\Console;
 
-use Spatie\Php7to5\Converter;
-use Spatie\Php7to5\DirectoryConverter;
-use Spatie\Php7to5\Exceptions\InvalidParameter;
+use danog\Php7to70\Converter;
+use danog\Php7to70\DirectoryConverter;
+use danog\Php7to70\Exceptions\InvalidParameter;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class ConvertCommand extends Command
 {
     protected function configure()
     {
         $this->setName('convert')
-            ->setDescription('Convert PHP 7 code to PHP 5 code')
+            ->setDescription('Convert PHP 7 code to PHP 7.0 code')
             ->addArgument(
                 'source',
                 InputArgument::REQUIRED,
@@ -25,7 +25,7 @@ class ConvertCommand extends Command
             ->addArgument(
                 'destination',
                 InputArgument::REQUIRED,
-                'The file or path where the PHP 5 code should be saved'
+                'The file or path where the PHP 7.0 code should be saved'
             )
             ->addOption(
                 'extension',
@@ -60,7 +60,7 @@ class ConvertCommand extends Command
      *
      * @return int
      *
-     * @throws \Spatie\Php7to5\Exceptions\InvalidParameter
+     * @throws \danog\Php7to70\Exceptions\InvalidParameter
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -103,7 +103,7 @@ class ConvertCommand extends Command
         $converter = new DirectoryConverter($source, $extensions, $excludes);
 
         if (!$input->getOption('overwrite')) {
-          $this->isDestinationASourceDirectory($source, $destination);
+            $this->isDestinationASourceDirectory($source, $destination);
         }
 
         $this->isDestinationDifferentThanSource($source, $destination);
@@ -124,7 +124,7 @@ class ConvertCommand extends Command
      * @param string $source
      * @param string $destination
      *
-     * @throws \Spatie\Php7to5\Exceptions\InvalidParameter
+     * @throws \danog\Php7to70\Exceptions\InvalidParameter
      */
     protected function isDestinationASourceDirectory($source, $destination)
     {
@@ -135,7 +135,7 @@ class ConvertCommand extends Command
      * @param string $source
      * @param string $destination
      *
-     * @throws \Spatie\Php7to5\Exceptions\InvalidParameter
+     * @throws \danog\Php7to70\Exceptions\InvalidParameter
      */
     protected function isDestinationDifferentThanSource($source, $destination)
     {
@@ -147,7 +147,7 @@ class ConvertCommand extends Command
      * @param string $source
      * @param string $destination
      *
-     * @throws \Spatie\Php7to5\Exceptions\InvalidParameter
+     * @throws \danog\Php7to70\Exceptions\InvalidParameter
      */
     protected function isEqual($source, $destination)
     {

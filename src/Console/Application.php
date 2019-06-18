@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Php7to5\Console;
+namespace danog\Php7to70\Console;
 
 use Symfony\Component\Console\Application as ConsoleApplication;
 
@@ -8,7 +8,7 @@ class Application extends ConsoleApplication
 {
     public function __construct()
     {
-        parent::__construct('php7to5', '1.0.0');
+        parent::__construct('php7to70', '1.0.0');
 
         $this->add(new ConvertCommand());
     }

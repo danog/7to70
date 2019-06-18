@@ -1,18 +1,23 @@
 {
-    "name": "spatie/7to5",
-    "description": "Convert PHP 7 code to PHP 5 code",
+    "name": "danog/7to70",
+    "description": "Convert PHP 7 code to PHP 7.0 code",
     "keywords": [
         "spatie",
-        "7to5",
+        "7to70",
         "convert",
         "php7",
         "abstract",
         "syntax",
         "tree"
     ],
-    "homepage": "https://github.com/spatie/7to5",
+    "homepage": "https://github.com/spatie/7to70",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Daniil Gentili",
+            "homepage": "https://daniil.it",
+            "role": "Developer"
+        },
         {
             "name": "Hannes Van de Vreken",
             "homepage": "http://madewithlove.be/",
@@ -39,18 +44,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Php7to5\\": "src"
+            "danog\\Php7to70\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Php7to5\\Test\\": "tests"
+            "danog\\Php7to70\\Test\\": "tests"
         }
     },
     "scripts": {
         "test": "vendor/bin/phpunit"
     },
     "bin": [
-        "php7to5"
+        "php7to70"
     ]
 }
