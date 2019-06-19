@@ -3,8 +3,8 @@
 namespace danog\Php7to70\NodeVisitors;
 
 use PhpParser\Node;
-use PhpParser\Node\Stmt\ClassConst;
 use PhpParser\NodeVisitorAbstract;
+use PhpParser\Node\Stmt\ClassConst;
 
 /**
  * Removes the class constant visibility modifiers (PHP 7.1)
