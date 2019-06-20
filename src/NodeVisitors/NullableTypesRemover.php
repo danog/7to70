@@ -16,7 +16,6 @@ class NullableTypesRemover extends NodeVisitorAbstract
         if (!$node instanceof Param) {
             return;
         }
-
         if ($node->type instanceof Node\NullableType) {
             $node->type = $node->type->type;
             if (!$node->default) {
