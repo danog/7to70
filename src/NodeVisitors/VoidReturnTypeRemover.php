@@ -16,7 +16,7 @@ class VoidReturnTypeRemover extends NodeVisitorAbstract
         if (!$node instanceof FunctionLike) {
             return;
         }
-        if ($node->returnType !== "void") {
+        if ((string) $node->returnType !== "void") {
             return;
         }
 
