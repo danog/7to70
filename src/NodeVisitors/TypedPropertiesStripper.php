@@ -17,7 +17,7 @@ class TypedPropertiesStripper extends NodeVisitorAbstract
     public function leaveNode(Node $node)
     {
         if (!($node instanceof StmtProperty)) {
-            //return;
+            return;
         }
         $node->type = null;
     }
