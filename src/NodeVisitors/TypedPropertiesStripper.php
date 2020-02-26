@@ -20,6 +20,5 @@ class TypedPropertiesStripper extends NodeVisitorAbstract
             //return;
         }
         $node->type = null;
-        \var_dump($node);
     }
 }
